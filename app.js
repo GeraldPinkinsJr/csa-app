@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 const authRouter = require("./routes/auth");
 const basketsRouter = require("./routes/baskets");
 const ordersRouter = require("./routes/orders");
+const itemsRouter = require("./routes/items");
 
 var app = express();
 
