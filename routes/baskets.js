@@ -5,7 +5,7 @@ const { authenticate } = require("../middlewares/auth");
 const { Basket, BasketItem, Item } = require("../models");
 
 // Create a new basket
-router.post("/", async (req, res) => {
+router.post("/", authenticate, async (req, res) => {
   try {
     const basket = await Basket.create(req.body);
     res.status(201).json(basket);
@@ -82,9 +82,5 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json({ message: "Error deleting basket", error });
   }
 });
-
-
-
-
 
 module.exports = router;
